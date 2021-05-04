@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/backrunner/levelatomic/issues"
   },
-  "homepage": "https://github.com/backrunner/levelatomic#readme"
+  "homepage": "https://github.com/backrunner/levelatomic#readme",
+  "dependencies": {
+    "deepmerge": "^4.2.2"
+  }
 }
