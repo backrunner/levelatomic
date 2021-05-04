@@ -1,0 +1,16 @@
+{
+  "name": "levelatomic",
+  "version": "0.1.0",
+  "description": "Extend levelup with some atomic methods",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backrunner/levelatomic.git"
+  },
+  "author": "BackRunner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/backrunner/levelatomic/issues"
+  },
+  "homepage": "https://github.com/backrunner/levelatomic#readme"
+}
