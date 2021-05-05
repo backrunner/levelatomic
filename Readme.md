@@ -7,7 +7,7 @@ This util will extend [levelup](https://github.com/Level/levelup) instance with 
 First of all, install the package from `npm`.
 
 ```bash
-npm install levelatomic
+npm install @backrunner/levelatomic
 ```
 
 Then wrap your levelup instance like this:
