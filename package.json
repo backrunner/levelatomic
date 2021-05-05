@@ -1,5 +1,5 @@
 {
-  "name": "levelatomic",
+  "name": "@backrunner/levelatomic",
   "version": "0.1.0",
   "description": "Extend levelup with some atomic methods",
   "main": "main.js",
