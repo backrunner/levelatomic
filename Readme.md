@@ -13,7 +13,7 @@ npm install @backrunner/levelatomic
 Then wrap your levelup instance like this:
 
 ```js
-const levelatomic = require('levelatomic');
+const levelatomic = require('@backrunner/levelatomic');
 const levelup = require('levelup');
 const leveldown = require('leveldown');
 
