@@ -28,25 +28,33 @@ All extended methods only support `Promise`, please use `Promise` to organize yo
 
 ### db.supdate
 
-db.supdate(key: any, value: any)
+`db.supdate(key: any, value: any)`
 
-Safely update a data pair in the storage.
+Safely update a data pair in the storage, if the key is not in the database, it will be inserted into the database.
 
 ### db.spush
 
-db.spush(key: any, item: any)
+`db.spush(key: any, item: any)`
 
 Safely push an item into an `Array` (JSON serialized) in the storage. Please ensure the value to the key you pass through is an `Array`, if not, the method will throw an error.
 
 Also, you should ensure that the `item` you passed here is a JSON safe object.
 
+If database cannot get the stored array, this method will create one.
+
 ### db.smerge
 
-db.smerge(key: any, obj: object)
+`db.smerge(key: any, ...source: Array<object>)`
 
-Safely merge an object with a stored object, the `obj` will be deep merged with the stored one.
+Safely merge an object with a stored object, `source` will be deep merged with the stored one.
 
-The `obj` you passed here should be a JSON safe object, also the value to the key should be a JSON serialized string from an object.
+All the `source` you passed here should be a JSON safe object, also the value to the key should be a JSON serialized string from an object.
+
+### db.sdel
+
+`db.sdel(key: any, cond: function)`
+
+Safely remove an object, you can pass a function here to judge if the object has been changed, if the `cond` function returns `false`, method will throw an erro with `objChanged` property, the value of the property will be `true`.
 
 ## License
 
