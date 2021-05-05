@@ -24,7 +24,7 @@ const unlock = (key) => {
   delete locks[getFormattedKey(key)];
 };
 
-const safeUpdate = function (key, value) {
+const safeUpdate = async function (key, value) {
   if (lock(key)) {
     await delayExec(safeUpdate, this, key, value);
   }
@@ -37,7 +37,7 @@ const safeUpdate = function (key, value) {
   unlock(key);
 };
 
-const safeDel = function (key, cond) {
+const safeDel = async function (key, cond) {
   if (lock(key)) {
     return await delayExec(safeDel, this, key, cond);
   }
@@ -59,7 +59,7 @@ const safeDel = function (key, cond) {
   unlock(key);
 }
 
-const safeMerge = function (key, ...source) {
+const safeMerge = async function (key, ...source) {
   if (lock(key)) {
     return await delayExec(safeMerge, this, key, ...source);
   }
@@ -77,7 +77,7 @@ const safeMerge = function (key, ...source) {
   unlock(key);
 };
 
-const safePush = function (key, item) {
+const safePush = async function (key, item) {
   if (lock(key)) {
     return await delayExec(safePush, this, key, item);
   }
